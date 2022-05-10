@@ -1,3 +1,5 @@
+// This is for book exercise 4.5.2 #1
+
 const sonnet = `Let me not to the marriage of true minds
 Admit impediments. Love is not love
 Which alters when it alteration finds,
@@ -13,9 +15,15 @@ But bears it out even to the edge of doom.
   If this be error and upon me proved,
   I never writ, nor no man ever loved.`;
 
-let uniques = {};
+
+let uniques = new Map();
 let words = sonnet.match(/[\w']+/g);
 
+uniques.set(words, 0);
+let currentValue = uniques.get(words);
+uniques.set(words, currentValue + 1);
+
+/*
 for (let i = 0; i < words.length; i++) {
   let word = words[i];
   if (!uniques[word]) {
@@ -24,5 +32,6 @@ for (let i = 0; i < words.length; i++) {
     uniques[word] += 1;
   }
 }
+*/
 
   console.log(uniques);
